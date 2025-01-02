@@ -1,0 +1,31 @@
+first we check about venv
+python -m venv env
+next we start virtual env
+.\env\Scripts\Activate
+
+install the all dependencies
+pip install flask
+pip install flask-sqlalchemy
+pip install python-dotenv
+
+to create the file
+New-Item -ItemType File -Name .env
+New-Item -ItemType File -Name .flaskenv
+
+
+we create __init__py file we use cmd to run flask run
+
+to create db
+from foodtracker import create_app
+from foodtracker.extension  import db
+db.createall(app=createall())
+# init_db.py
+from foodtrack import create_app
+from foodtrack.extension import db
+
+app = create_app()
+with app.app_context():
+    db.create_all()
+    print("Database tables created successfully.")
+after import the table
+from foodtrack.models import log_data
