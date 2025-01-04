@@ -127,12 +127,11 @@
 									{% for food in foods %}
 									<tr>
 										<td>{{ food.id }}</td><td>{{ food.name }}</td><td>{{ food.proteins }}</td>
-										<td>{{ food.carbs }}</td><td>{{ food.fats }}</th><td>{{ food.calories }}</td>
-										<td>
-											<a href="{{ url_for('main.edit_food', food_id=food.id) }}" class="btn btn-default btn-xs">
+										<td>{{ food.carbs }}</td><td>{{ food.fats }}</th> <td>{{ food.calories }}</td>								<td>
+											<a href="{{url_for('main.edit_food',food_id=food.id)}}" class="btn btn-default btn-xs">
 												<i class="glyphicon glyphicon-pencil"></i> Edit
 											</a> 
-											<a href="{{ url_for('main.delete_food', food_id=food.id) }}" class="btn btn-danger btn-xs">
+											<a href="{{url_for('main.delete_food',food_id=food.id)}}" class="btn btn-danger btn-xs">
 												<i class="glyphicon glyphicon-trash"></i> Delete
 											</a> 
 										</td>

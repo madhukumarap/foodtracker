@@ -9,7 +9,10 @@ class Food(db.Model):
     proteins = db.Column(db.Integer, nullable=False)
     carbs = db.Column(db.Integer, nullable=False)
     fats = db.Column(db.Integer, nullable=False)
-    
+    #@property is a decorator that allows you to define methods that behave like attributes.
+    @property
+    def calories(self):
+        return self.proteins*4 + self.carbs*4 + self.fats*9
 class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)

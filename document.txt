@@ -29,3 +29,14 @@ with app.app_context():
     print("Database tables created successfully.")
 after import the table
 from foodtrack.models import log_data
+
+from foodtrack import create_app
+from foodtrack.extension import db
+
+# Create the Flask application
+app = create_app()
+
+# Use the application context to initialize the database
+with app.app_context():
+    db.create_all()
+    print("Database tables created successfully.")
